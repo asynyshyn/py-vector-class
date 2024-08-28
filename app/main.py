@@ -3,9 +3,9 @@ import math
 
 
 class Vector:
-    def __init__(self, x: float, y: float) -> None:
-        self.x = round(x, 2)
-        self.y = round(y, 2)
+    def __init__(self, x_value: float, y_value: float) -> None:
+        self.x = round(x_value, 2)
+        self.y = round(y_value, 2)
 
     def __add__(self, other: Vector) -> Vector:
         new_x = self.x + other.x
@@ -18,7 +18,7 @@ class Vector:
         return Vector(new_x, new_y)
 
     def __mul__(self, other: Vector | float) -> Vector | float:
-        if isinstance(other, (float, int)):  # Check for both float and int
+        if isinstance(other, (float, int)):
             new_x = self.x * other
             new_y = self.y * other
             return Vector(new_x, new_y)
